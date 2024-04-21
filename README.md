@@ -35,7 +35,7 @@ Command Line Arguments
 
 ### Search for writeups by title:
 ```
-./penland -title="cross-site scripting"
+./penland -title="XSS"
 ```
 
 ### Search for writeups by program:
@@ -47,7 +47,7 @@ Command Line Arguments
 ### Search and save results to a file:
 
 ```
-./penland -bugs="sql injection" -output="results.json"
+./penland -bugs="ATO" -output="results.json"
 ```
 
 ## Output Format
