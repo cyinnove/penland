@@ -21,33 +21,33 @@ OR
 ```sh
 git clone https://github.com/zomasec/penland
 cd penland
-go build
+go build -o penland
 ```
 ## Usage
 Command Line Arguments
 
     -title: Filter writeups by title.
     -program: Filter writeups by program name.
-    bug: Filter writeups by bug type.
-    output: Specify the output file name for saving results in JSON format. If not provided, results are printed to the console.
+    -bug: Filter writeups by bug type.
+    -o: Specify the output file name for saving results in JSON format. If not provided, results are printed to the console.
 
 ## Examples
 
 ### Search for writeups by title:
 ```
-./penland -title="XSS"
+penland -title XSS in search bar -program lazada
 ```
 
 ### Search for writeups by program:
 
 ```
-./penland -programs="Google"
+penland -program Google
 ```
 
 ### Search and save results to a file:
 
 ```
-./penland -bugs="ATO" -output="results.json"
+penland -bug="ATO" -output="results.json"
 ```
 
 ## Output Format
