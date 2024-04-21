@@ -38,9 +38,8 @@ type Results struct {
 // Flags to capture user input
 var (
 	title    = flag.String("title", "", "Filter by the title of the writeup")
-	link     = flag.String("link", "", "Filter by the link of the writeup")
-	programs = flag.String("programs", "", "Filter by the program involved in the writeup")
-	bugs     = flag.String("bugs", "", "Filter by the bug types mentioned in the writeup")
+	program = flag.String("program", "", "Filter by the program involved in the writeup")
+	bug     = flag.String("bug", "", "Filter by the bug types mentioned in the writeup")
 	output   = flag.String("output", "", "Specify the output file name")
 )
 func main() {
@@ -83,13 +82,11 @@ func main() {
 		if *title != "" && !strings.Contains(strings.ToLower(data.Links[0].Title), strings.ToLower(*title)) {
 			match = false
 		}
-		if *link != "" && !strings.Contains(strings.ToLower(data.Links[0].Link), strings.ToLower(*link)) {
-			match = false
-		}
-		if *programs != "" {
+	
+		if *program != "" {
 			programMatch := false
 			for _, program := range data.Programs {
-				if strings.Contains(strings.ToLower(program), strings.ToLower(*programs)) {
+				if strings.Contains(strings.ToLower(program), strings.ToLower(program)) {
 					programMatch = true
 					break
 				}
@@ -98,10 +95,10 @@ func main() {
 				match = false
 			}
 		}
-		if *bugs != "" {
+		if *bug != "" {
 			bugsMatch := false
 			for _, bug := range data.Bugs {
-				if strings.Contains(strings.ToLower(bug), strings.ToLower(*bugs)) {
+				if strings.Contains(strings.ToLower(bug), strings.ToLower(bug)) {
 					bugsMatch = true
 					break
 				}
