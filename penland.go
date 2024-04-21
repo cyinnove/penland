@@ -40,7 +40,7 @@ var (
 	title    = flag.String("title", "", "Filter by the title of the writeup")
 	program = flag.String("program", "", "Filter by the program involved in the writeup")
 	bug     = flag.String("bug", "", "Filter by the bug types mentioned in the writeup")
-	output   = flag.String("output", "", "Specify the output file name")
+	output   = flag.String("o", "", "Specify the output file name")
 )
 func main() {
 	flag.Parse() // Parse the provided flags
